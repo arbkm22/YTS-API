@@ -21,16 +21,8 @@ class MovieList(BaseModel):
     title_eng: str
     year: int
     rating: float
-    runtime: int
     genres: List[str]
-    summary: str
-    yt_trailer_code: str
-    language: str
-    mpa_rating: str
-    background_image_original: str
-    medium_cover_image: str
     large_cover_image: str
-    torrents: List[Torrents]
 
 
 class Cast(BaseModel):
@@ -44,6 +36,11 @@ class MovieDetail(MovieList):
     download_count: int
     like_count: int
     cast: List[Cast]
+    runtime: int
+    description: str
+    yt_trailer_code: str
+    background_image_original: str
     lsi1: str
     lsi2: str
     lsi3: str
+    torrents: List[Torrents]
