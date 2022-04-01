@@ -8,10 +8,10 @@ app = FastAPI()
 def root():
     return {"hello": "world"}
 
-@app.get("/movieList")
-async def movieList(p: int = 1):
+@app.get("/movies_list")
+async def movies_list(p: int = 1):
     return get_movie_list(p)
 
-@app.get("/movieDetail")
-async def movieDetail(id: int):
+@app.get("/movie_detail")
+async def movie_detail(id: int):
     return get_movie(id)
