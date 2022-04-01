@@ -33,9 +33,9 @@ class Cast(BaseModel):
 class MovieDetail(MovieList):
     download_count: int
     like_count: int
-    cast: List[Cast]
+    #cast: List[Cast]
     runtime: int
-    description: str
+    description_intro: str
     yt_trailer_code: str
     background_image_original: str
     lsi1: str

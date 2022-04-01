@@ -1,6 +1,6 @@
 import requests
 
-from models import MovieDetail, MovieList
+from src.models.models import MovieDetail, MovieList
 
 def get_movie(id: int) -> MovieDetail:
     url = f"https://yts.mx/api/v2/movie_details.json?movie_id={id}&with_images=true&with_cast=true"
@@ -18,9 +18,9 @@ def get_movie(id: int) -> MovieDetail:
             large_cover_image = movie["large_cover_image"],
             download_count = movie["download_count"],
             like_count = movie["like_count"],
-            cast = movie["cast"],
+            #cast = movie["cast"],
             runtime = movie["runtime"],
-            description = movie["description"],
+            description_intro = movie["description_intro"],
             yt_trailer_code = movie["yt_trailer_code"],
             background_image_original = movie["background_image_original"],
             lsi1 = movie["large_screenshot_image1"],
