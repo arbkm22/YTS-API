@@ -32,8 +32,8 @@ def get_movie(id: int) -> MovieDetail:
     else:
         print("error")
 
-def get_movie_list() -> MovieList:
-    url = "https://yts.mx/api/v2/list_movies.json"
+def get_movie_list(page: int = 1):
+    url = f"https://yts.mx/api/v2/list_movies.json?page={page}"
     response = requests.get(url)
     if (response.status_code == 200):
         data = response.json()["data"]["movies"]
@@ -50,8 +50,7 @@ def get_movie_list() -> MovieList:
                 large_cover_image = movie["large_cover_image"]
             )
             movies.append(movie_data)
-            return movie_data
+        return movies
     else:
         print("error")
-    
-    movies = []
+        return []
