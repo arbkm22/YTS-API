@@ -2,7 +2,7 @@ import requests
 
 from models import MovieDetail, MovieList
 
-def get_movies(id: int) -> MovieDetail:
+def get_movie(id: int) -> MovieDetail:
     url = f"https://yts.mx/api/v2/movie_details.json?movie_id={id}&with_images=true&with_cast=true"
     response = requests.get(url)
     if (response.status_code == 200):
