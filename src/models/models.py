@@ -26,7 +26,7 @@ class MovieList(BaseModel):
 class Cast(BaseModel):
     name: str
     character_name: str
-    url_image: str
+    url_small_image: str
     imdb_code: str
 
 
