@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Optional
 from pydantic import BaseModel
 
 
@@ -31,15 +31,15 @@ class Cast(BaseModel):
 
 
 class MovieDetail(MovieList):
-    download_count: int
-    like_count: int
-    cast: List[Cast]
-    runtime: int
-    description_full: str
-    yt_trailer_code: str
-    language: str
-    background_image_original: str
-    lsi1: str
-    lsi2: str
-    lsi3: str
+    download_count: Optional[int]
+    like_count: Optional[int]
+    cast: Optional[List[Cast]]
+    runtime: Optional[int]
+    description_full: Optional[str]
+    yt_trailer_code: Optional[str]
+    language: Optional[str]
+    background_image_original: Optional[str]
+    lsi1: Optional[str]
+    lsi2: Optional[str]
+    lsi3: Optional[str]
     torrents: List[Torrents]
