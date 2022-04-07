@@ -15,12 +15,12 @@ class Torrents(BaseModel):
 class MovieList(BaseModel):
     id: int
     url: str
-    imdb_code: str
-    title_eng: str
-    year: int
-    rating: float
-    genres: List[str]
-    large_cover_image: str
+    imdb_code: Optional[str]
+    title_eng: Optional[str]
+    year: Optional[int]
+    rating: Optional[float]
+    genres: Optional[List[str]]
+    large_cover_image: Optional[str]
 
 
 class Cast(BaseModel):
