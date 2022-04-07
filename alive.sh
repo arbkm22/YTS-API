@@ -1,6 +1,8 @@
 echo "-- KEEP SERVER ALIVE --"
 count=1
+
 SERVER_URL="https://yts-api.herokuapp.com/"
+
 while true ; 
     do 
         if [[ ! -v SERVER_URL ]]; then
