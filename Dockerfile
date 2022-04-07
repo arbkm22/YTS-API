@@ -12,8 +12,10 @@ RUN pip3 install --no-cache --upgrade pip setuptools
 
 COPY requirements.txt .
 
-RUN chmod +x start.sh alive.sh
-
 RUN pip3 install --no-cache-dir -r requirements.txt
+
+COPY . .
+
+RUN chmod +x start.sh alive.sh
 
 CMD [ "bash", "start.sh" ]
