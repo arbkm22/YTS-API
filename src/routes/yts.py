@@ -7,7 +7,7 @@ router = APIRouter()
 @router.get("/")
 def root():
     return {
-        "movie_list": "returns the list of all movies(page optional)",
+        "movies_list": "returns the list of all movies(page = optional)",
         "movie_detail": "returns the detail of a movie(id = mandatory)"
         }
 
