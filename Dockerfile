@@ -1,4 +1,4 @@
-FROM python:3.10.4-alpine3.14
+FROM python:3.9-alpine3.14
 
 RUN apk add --no-cache --update \
     ca-certificates \
