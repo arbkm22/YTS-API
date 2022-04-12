@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 
-from src.controllers.helpers import get_movie, get_movie_list
+from src.controllers.helpers import get_movie, get_movie_detail, get_movie_list
 from src.controllers.helpers_uno import get_latest_movies, get_most_liked_movies, get_popular_movies
 
 router = APIRouter()
@@ -31,3 +31,7 @@ async def popular_movies():
 @router.get("/most_liked")
 async def most_liked():
     return get_most_liked_movies()
+
+@router.get("/movie_detailv2")
+async def movie_detailv2(name: str, mci: str):
+    return get_movie_detail(name, mci)
