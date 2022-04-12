@@ -18,6 +18,7 @@ def get_movie(id: int) -> MovieDetail:
             rating = movie.get("rating"),
             genres = movie.get("genres"),
             large_cover_image = movie.get("large_cover_image"),
+            medium_cover_image = movie.get("medium_cover_image"),
             download_count = movie.get("download_count"),
             like_count = movie.get("like_count"),
             cast = movie.get("cast"),
@@ -34,6 +35,21 @@ def get_movie(id: int) -> MovieDetail:
         return movie_detail
     else:
         print("error")
+
+
+def get_movie_detail(name: str, mci: str):
+    url = f"https://yts.mx/api/v2/list_movies.json?query_term={name}"
+    response = requests.get(url)
+    if (response.status_code == 200):
+        data = response.json()["data"]["movies"]
+        for movie in data:
+            mci_temp = movie.get("medium_cover_image")
+            if (mci == mci_temp):
+                id = movie.get("id")
+                movie_detail = get_movie(id)
+                return movie_detail
+        print("Movie not found")
+
 
 def get_movie_list(page: int = 1):
     url = f"https://yts.mx/api/v2/list_movies.json?page={page}"
