@@ -66,7 +66,16 @@ class Cast(BaseModel):
     imdb_code: str
 
 
-class MovieDetail(MovieList):
+class MovieDetail(BaseModel):
+    id: int
+    url: str
+    imdb_code: Optional[str]
+    title_eng: Optional[str]
+    year: Optional[int]
+    rating: Optional[float]
+    genres: Optional[List[str]]
+    large_cover_image: Optional[str]
+    medium_cover_image: Optional[str]
     download_count: Optional[int]
     like_count: Optional[int]
     cast: Optional[List[Cast]]
