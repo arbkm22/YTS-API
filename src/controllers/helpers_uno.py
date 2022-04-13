@@ -18,6 +18,13 @@ def movies_list(url: str) -> MovieList:
         year = movie.find("div", class_="browse-movie-year")
         url = url["href"]
         title_eng = name.text.strip()
+        string_split = title_eng.split()
+        temp = []
+        for i in string_split:
+            if i.startswith("["):
+                continue
+            temp.append(i)
+            title_eng = " ".join(temp)
         year = year.text.strip()
         img = img["src"]
         movie_data = MovieList(
