@@ -4,13 +4,13 @@ from pydantic import BaseModel
 
 
 class Torrents(BaseModel):
-    url: str
-    hash: str
-    quality: str
-    type: str
-    seeds: int 
-    peers: int 
-    size: str
+    url: Optional[str]
+    hash: Optional[str]
+    quality: Optional[str]
+    type: Optional[str]
+    seeds: Optional[str]
+    peers: Optional[str]
+    size: Optional[str]
 
 @dataclass
 class MovieList():
@@ -59,10 +59,10 @@ class MovieList():
         return self.index[index]
 
 class Cast(BaseModel):
-    name: str
-    character_name: str
-    url_small_image: str
-    imdb_code: str
+    name: Optional[str]
+    character_name: Optional[str]
+    url_small_image: Optional[str]
+    imdb_code: Optional[str]
 
 
 class MovieDetail(BaseModel):
