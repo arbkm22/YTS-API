@@ -33,5 +33,5 @@ async def most_liked():
     return get_most_liked_movies()
 
 @router.get("/movie_detailv2")
-async def movie_detailv2(name: str, mci: str):
-    return get_movie_detail(name, mci)
+async def movie_detailv2(name: str, url: str):
+    return get_movie_detail(name, url)

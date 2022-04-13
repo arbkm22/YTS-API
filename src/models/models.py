@@ -15,8 +15,8 @@ class Torrents(BaseModel):
 @dataclass
 class MovieList():
     #id: int
-    #url: str
     #imdb_code: Optional[str]
+    url: Optional[str]
     title_eng: Optional[str]
     year: Optional[int]
     #rating: Optional[float]
@@ -44,7 +44,8 @@ class MovieList():
     #         "genres": self.genres,
     #         "large_cover_image": self.large_cover_image
     #     })
-    def __init__(self, title_eng, year, medium_cover_image):
+    def __init__(self, url, title_eng, year, medium_cover_image):
+        self.url = url
         self.title_eng = title_eng
         self.year = year
         self.medium_cover_image = medium_cover_image

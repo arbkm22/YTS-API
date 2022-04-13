@@ -37,14 +37,15 @@ def get_movie(id: int) -> MovieDetail:
         print("error")
 
 
-def get_movie_detail(name: str, mci: str):
-    url = f"https://yts.mx/api/v2/list_movies.json?query_term={name}"
-    response = requests.get(url)
+def get_movie_detail(name: str, url: str):
+    URL = f"https://yts.mx/api/v2/list_movies.json?query_term={name}"
+    response = requests.get(URL)
     if (response.status_code == 200):
         data = response.json()["data"]["movies"]
         for movie in data:
-            mci_temp = movie.get("medium_cover_image")
-            if (mci == mci_temp):
+            url_temp = movie.get("url")
+            #mci_temp = movie.get("medium_cover_image")
+            if (url == url_temp):
                 id = movie.get("id")
                 movie_detail = get_movie(id)
                 return movie_detail

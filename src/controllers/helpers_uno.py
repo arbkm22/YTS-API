@@ -12,13 +12,16 @@ def movies_list(url: str) -> MovieList:
     result = soup.find_all("div", class_="browse-movie-wrap col-xs-10 col-sm-4 col-md-5 col-lg-4")
     return_list = []
     for movie in result:
+        url = movie.find("a", class_="browse-movie-link")
         img = movie.find("img", class_="img-responsive")
         name = movie.find("a", class_="browse-movie-title")
         year = movie.find("div", class_="browse-movie-year")
+        url = url["href"]
         title_eng = name.text.strip()
         year = year.text.strip()
         img = img["src"]
         movie_data = MovieList(
+            url = url,
             title_eng = title_eng,
             year = year,
             medium_cover_image = img
