@@ -3,7 +3,6 @@ import requests
 from src.models.models import MovieDetail, MovieList
 
 # This module uses the official api to implement the helper function
-
 def get_movie(id: int) -> MovieDetail:
     url = f"https://yts.mx/api/v2/movie_details.json?movie_id={id}&with_images=true&with_cast=true"
     response = requests.get(url)
@@ -74,3 +73,7 @@ def get_movie_list(page: int = 1):
     else:
         print("error")
         return []
+
+
+def new_fun() -> None:
+    pass
